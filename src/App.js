@@ -106,11 +106,11 @@ function Nav() {
           {isHome ? (
             <>
               {["How It Works", "Services", "Results", "Pricing", "Contact"].map(t => (
-                <a key={t} href={"#" + t.toLowerCase().replace(/\s/g, "-")} style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>{t}</a>
+                <a key={t} href={"#" + t.toLowerCase().replace(/\s/g, "-")} className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>{t}</a>
               ))}
             </>
           ) : (
-            <Link to="/" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>Home</Link>
+            <Link to="/" className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>Home</Link>
           )}
           <a href="tel:8174382050" style={{ padding: "9px 22px", background: gold, color: navy, borderRadius: 6, textDecoration: "none", fontSize: 14, fontWeight: 700, fontFamily: "var(--body)" }}>Call Us</a>
         </div>
@@ -665,6 +665,30 @@ export default function App() {
           html { scroll-behavior: smooth; }
           body { background: #fff; }
           @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+        
+        @media (max-width: 860px) {
+          [style*="grid-template-columns: 1fr 320px"] { grid-template-columns: 1fr !important; }
+          [style*="grid-template-columns: repeat(5"] { grid-template-columns: 1fr 1fr !important; }
+          [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+          [style*="grid-template-columns: 1fr 1fr"][style*="max-width: 800px"] { grid-template-columns: 1fr !important; }
+          [style*="grid-template-columns: 1fr 1fr"][style*="max-width: 900px"] { grid-template-columns: 1fr !important; }
+          [style*="grid-template-columns: 1fr 1fr"][style*="gap: 18"] { grid-template-columns: 1fr !important; }
+          [style*="width: 310px"] { width: 280px !important; margin: 0 auto !important; }
+          [style*="font-size: clamp(34px"] { font-size: 28px !important; }
+          [style*="font-size: clamp(28px"] { font-size: 24px !important; }
+          [style*="font-size: clamp(26px"] { font-size: 22px !important; }
+          [style*="font-size: clamp(24px"] { font-size: 20px !important; }
+          footer > div > div { flex-direction: column !important; text-align: center !important; }
+          .nav-hide { display: none !important; }
+          [style*="padding: 40px"] { padding: 20px !important; }
+        }
+        
+        @media (max-width: 480px) {
+          [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+          [style*="width: 280px"] { width: 250px !important; }
+          [style*="font-size: 50px"] { font-size: 36px !important; }
+          [style*="font-size: 40px"] { font-size: 28px !important; }
+        }
         `}</style>
         <Nav />
         <Routes>
