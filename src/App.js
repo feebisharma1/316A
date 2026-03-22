@@ -105,7 +105,8 @@ function Nav() {
         <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
           {isHome ? (
             <>
-              {["How It Works", "Services", "Results", "Pricing", "Contact"].map(t => (
+              <Link to="/services" className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>Services</Link>
+              {["How It Works", "Results", "Pricing", "Contact"].map(t => (
                 <a key={t} href={"#" + t.toLowerCase().replace(/\s/g, "-")} className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>{t}</a>
               ))}
             </>
@@ -126,6 +127,7 @@ function Footer() {
       <div style={{ ...wrap, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
         <span style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)" }}>{BIZ} — Saginaw, TX</span>
         <div style={{ display: "flex", gap: 16 }}>
+          <Link to="/services" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>Services</Link>
           <Link to="/privacy" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>Privacy Policy</Link>
           <Link to="/terms" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>Terms & Conditions</Link>
           <Link to="/optin" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>SMS Opt-In</Link>
@@ -215,96 +217,6 @@ function HomePage() {
                 </div>
               </Reveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section id="services" style={{ padding: "80px 0", background: "#fff" }}>
-        <div style={wrap}>
-          <Reveal>
-            <h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: "clamp(28px,3vw,40px)", textAlign: "center", color: navy, marginBottom: 12 }}>Services We Offer</h2>
-            <p style={{ fontFamily: "var(--body)", color: "#888", fontSize: 15, textAlign: "center", maxWidth: 500, margin: "0 auto 48px" }}>AI-powered automation and professional web design to help your business grow.</p>
-          </Reveal>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 800, margin: "0 auto" }}>
-            <Reveal delay={0}>
-              <div style={{ padding: "40px 32px", borderRadius: 16, border: "2px solid " + gold, background: cream, height: "100%" }}>
-                <div style={{ fontSize: 40, marginBottom: 16 }}>💬</div>
-                <h3 style={{ fontFamily: "var(--head)", fontWeight: 700, fontSize: 22, color: navy, marginBottom: 12 }}>AI Text-Back</h3>
-                <p style={{ fontFamily: "var(--body)", fontSize: 14.5, color: "#555", lineHeight: 1.7, marginBottom: 20 }}>Never lose a job to a missed call again. Our AI responds to your customers within 30 seconds, handles the conversation, and books the appointment — 24/7, even while you sleep.</p>
-                <div>
-                  {["Missed call text-back in 30 sec", "AI-powered conversation", "Automatic appointment booking", "Works nights, weekends, holidays", "Custom setup for your business"].map((f, i) => (
-                    <div key={i} style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}>
-                      <span style={{ color: gold, fontWeight: 700 }}>✓</span>
-                      <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#555" }}>{f}</span>
-                    </div>
-                  ))}
-                </div>
-                <div style={{ marginTop: 20, fontFamily: "var(--body)", fontWeight: 700, fontSize: 24, color: navy }}>$300<span style={{ fontSize: 14, fontWeight: 500, color: "#999" }}>/mo</span></div>
-              </div>
-            </Reveal>
-            <Reveal delay={120}>
-              <div style={{ padding: "40px 32px", borderRadius: 16, border: "2px solid " + gold, background: cream, height: "100%" }}>
-                <div style={{ fontSize: 40, marginBottom: 16 }}>🌐</div>
-                <h3 style={{ fontFamily: "var(--head)", fontWeight: 700, fontSize: 22, color: navy, marginBottom: 12 }}>Website Design</h3>
-                <p style={{ fontFamily: "var(--body)", fontSize: 14.5, color: "#555", lineHeight: 1.7, marginBottom: 12 }}>Need a professional website that actually converts? We design and build clean, modern websites for home service businesses — so your customers can find you and trust you online.</p>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "4px 10px", borderRadius: 6, background: "rgba(22,28,44,.06)", marginBottom: 16 }}>
-                  <span style={{ fontSize: 12 }}>🏆</span>
-                  <span style={{ fontFamily: "var(--body)", fontSize: 12, fontWeight: 600, color: navy }}>6+ Years Web Design Experience</span>
-                </div>
-                <div>
-                  {["Custom design for your brand", "Mobile-friendly & fast", "SEO-optimized", "Contact forms & booking links", "Ongoing support available"].map((f, i) => (
-                    <div key={i} style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}>
-                      <span style={{ color: gold, fontWeight: 700 }}>✓</span>
-                      <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#555" }}>{f}</span>
-                    </div>
-                  ))}
-                </div>
-                <div style={{ marginTop: 20, fontFamily: "var(--body)", fontWeight: 700, fontSize: 24, color: navy }}>$500<span style={{ fontSize: 14, fontWeight: 500, color: "#999" }}> starting</span></div>
-              </div>
-            </Reveal>
-          </div>
-
-          {/* ROW 2 - Coming Soon */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, maxWidth: 800, margin: "24px auto 0" }}>
-            <Reveal delay={0}>
-              <div style={{ padding: "40px 32px", borderRadius: 16, border: "2px solid " + gold, background: cream, height: "100%", position: "relative", overflow: "hidden" }}>
-                <div style={{ position: "absolute", top: 16, right: 16, padding: "4px 12px", borderRadius: 20, background: navy, fontFamily: "var(--body)", fontSize: 11, fontWeight: 600, color: gold }}>Coming Soon</div>
-                <div style={{ fontSize: 40, marginBottom: 16 }}>🤖</div>
-                <h3 style={{ fontFamily: "var(--head)", fontWeight: 700, fontSize: 22, color: navy, marginBottom: 12 }}>Full AI Receptionist</h3>
-                <p style={{ fontFamily: "var(--body)", fontSize: 14.5, color: "#555", lineHeight: 1.7, marginBottom: 20 }}>A complete AI-powered front desk for your business. Answers every call, handles scheduling, rescheduling, cancellations, and customer questions — so you never need to hire a receptionist or answering service again.</p>
-                <div>
-                  {["Answers calls live with AI voice", "Schedules, reschedules & cancels appointments", "Handles FAQs about your business", "Transfers urgent calls to you", "Full call summaries & transcripts"].map((f, i) => (
-                    <div key={i} style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}>
-                      <span style={{ color: gold, fontWeight: 700 }}>✓</span>
-                      <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#555" }}>{f}</span>
-                    </div>
-                  ))}
-                </div>
-                <div style={{ marginTop: 20, fontFamily: "var(--body)", fontWeight: 600, fontSize: 15, color: gold }}>Coming Soon</div>
-              </div>
-            </Reveal>
-            <Reveal delay={120}>
-              <div style={{ padding: "40px 32px", borderRadius: 16, border: "2px solid " + gold, background: cream, height: "100%", position: "relative", overflow: "hidden" }}>
-                <div style={{ position: "absolute", top: 16, right: 16, padding: "4px 12px", borderRadius: 20, background: navy, fontFamily: "var(--body)", fontSize: 11, fontWeight: 600, color: gold }}>Coming Soon</div>
-                <div style={{ fontSize: 40, marginBottom: 16 }}>📊</div>
-                <h3 style={{ fontFamily: "var(--head)", fontWeight: 700, fontSize: 22, color: navy, marginBottom: 12 }}>Financial Intelligence</h3>
-                <p style={{ fontFamily: "var(--body)", fontSize: 14.5, color: "#555", lineHeight: 1.7, marginBottom: 20 }}>AI-powered financial insights built for small business owners. Track revenue, expenses, cash flow, and profitability — with smart alerts and plain-English reports so you always know where your money is going. Backed by 10+ years of financial experience.</p>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "4px 10px", borderRadius: 6, background: "rgba(22,28,44,.06)", marginBottom: 16 }}>
-                  <span style={{ fontSize: 12 }}>🏆</span>
-                  <span style={{ fontFamily: "var(--body)", fontSize: 12, fontWeight: 600, color: navy }}>10+ Years Financial Experience</span>
-                </div>
-                <div>
-                  {["Monthly P&L report — see exactly what you made and spent", "Identify your most profitable services and jobs", "Understand why revenue is up but cash feels tight", "Spot unusual expenses before they become big problems", "Tax-ready financial summary delivered every month", "Custom insights tailored to your specific business"].map((f, i) => (
-                    <div key={i} style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}>
-                      <span style={{ color: gold, fontWeight: 700 }}>✓</span>
-                      <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#555" }}>{f}</span>
-                    </div>
-                  ))}
-                </div>
-                <div style={{ marginTop: 20, fontFamily: "var(--body)", fontWeight: 600, fontSize: 15, color: gold }}>Coming Soon</div>
-              </div>
-            </Reveal>
           </div>
         </div>
       </section>
@@ -452,7 +364,14 @@ function HomePage() {
                   <div style={{ marginBottom: 20 }}>
                     <textarea style={{ ...inputStyle, minHeight: 120, resize: "vertical" }} placeholder="How can we help you?" value={cMsg} onChange={e => setCMsg(e.target.value)} />
                   </div>
-                  <button onClick={() => { if (cName && cEmail) setCSent(true); }}
+                  <button onClick={() => {
+                    if (!cName || !cEmail) return;
+                    fetch("https://formspree.io/f/mqeyogyd", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({ name: cName, email: cEmail, phone: cPhone, message: cMsg })
+                    }).then(() => setCSent(true)).catch(() => setCSent(true));
+                  }}
                     style={{
                       width: "100%", padding: "16px", borderRadius: 8, border: "none",
                       cursor: (!cName || !cEmail) ? "not-allowed" : "pointer",
@@ -467,6 +386,180 @@ function HomePage() {
               )}
             </Reveal>
           </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+
+/* ═══════════════════════════════════════ */
+/*  SERVICES PAGE                          */
+/* ═══════════════════════════════════════ */
+function ServicesPage() {
+  return (
+    <>
+      {/* HERO */}
+      <section style={{ paddingTop: 115, paddingBottom: 60, background: navy, position: "relative", overflow: "hidden" }}>
+        <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(199,177,103,.1) 0%, transparent 60%)", pointerEvents: "none" }} />
+        <div style={{ ...wrap, position: "relative", zIndex: 2, textAlign: "center" }}>
+          <Reveal>
+            <p style={{ fontFamily: "var(--body)", fontSize: 13, fontWeight: 600, color: gold, textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: 16 }}>What We Do</p>
+            <h1 style={{ fontFamily: "var(--head)", fontWeight: 900, fontSize: "clamp(32px,4vw,52px)", lineHeight: 1.1, color: "#fff", marginBottom: 20 }}>Services We Offer</h1>
+            <p style={{ fontFamily: "var(--body)", fontSize: 17, lineHeight: 1.75, color: "rgba(255,255,255,.6)", maxWidth: 560, margin: "0 auto" }}>AI-powered automation, professional web design, and financial intelligence to help your business grow and stay ahead.</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* AI TEXT-BACK - FEATURED */}
+      <section style={{ padding: "80px 0", background: "#fff" }}>
+        <div style={{ ...wrap, maxWidth: 900 }}>
+          <Reveal>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 50, alignItems: "center" }}>
+              <div>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "5px 14px", borderRadius: 50, background: "rgba(199,177,103,.1)", border: "1px solid rgba(199,177,103,.25)", marginBottom: 20 }}>
+                  <span style={{ fontSize: 14 }}>💬</span>
+                  <span style={{ fontFamily: "var(--body)", fontSize: 12, fontWeight: 600, color: gold }}>Our Flagship Service</span>
+                </div>
+                <h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: "clamp(26px,3vw,38px)", color: navy, marginBottom: 16 }}>AI Missed Call Text-Back</h2>
+                <p style={{ fontFamily: "var(--body)", fontSize: 15, lineHeight: 1.75, color: "#555", marginBottom: 24 }}>Never lose a job to a missed call again. Our AI responds to your customers within 30 seconds, handles the conversation professionally, and books the appointment — 24/7, even while you sleep.</p>
+                <div style={{ marginBottom: 24 }}>
+                  {["Missed call text-back in 30 seconds", "AI-powered natural conversation", "Automatic appointment booking", "Works nights, weekends, and holidays", "Custom setup tailored to your business", "No tech skills needed — we handle everything"].map((f, i) => (
+                    <div key={i} style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 10 }}>
+                      <span style={{ color: gold, fontWeight: 700, fontSize: 16 }}>✓</span>
+                      <span style={{ fontFamily: "var(--body)", fontSize: 14, color: "#444" }}>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 32, color: navy }}>$300<span style={{ fontSize: 16, fontWeight: 500, color: "#999" }}>/mo</span></div>
+              </div>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <div style={{ padding: "32px", borderRadius: 20, background: cream, border: "2px solid " + gold, textAlign: "center" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 20, marginBottom: 20 }}>
+                    {[
+                      { val: "30 sec", label: "Response" },
+                      { val: "24/7", label: "Availability" },
+                      { val: "$0", label: "Per Call" },
+                    ].map((s, i) => (
+                      <div key={i}>
+                        <div style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 24, color: gold }}>{s.val}</div>
+                        <div style={{ fontFamily: "var(--body)", fontSize: 11, color: "#888", fontWeight: 500 }}>{s.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <a href="tel:8174382050" style={{ display: "block", padding: "14px 24px", background: navy, color: "#fff", borderRadius: 8, textDecoration: "none", fontFamily: "var(--body)", fontWeight: 700, fontSize: 15 }}>Get Started — Call {PHONE}</a>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* DIVIDER */}
+      <div style={{ maxWidth: 900, margin: "0 auto", height: 1, background: "linear-gradient(90deg, transparent, " + gold + ", transparent)" }} />
+
+      {/* WEBSITE DESIGN */}
+      <section style={{ padding: "80px 0", background: "#fff" }}>
+        <div style={{ ...wrap, maxWidth: 900 }}>
+          <Reveal>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 50, alignItems: "center" }}>
+              <div style={{ display: "flex", justifyContent: "center", order: 0 }}>
+                <div style={{ padding: "32px", borderRadius: 20, background: cream, border: "2px solid " + gold, width: "100%" }}>
+                  <div style={{ fontSize: 48, textAlign: "center", marginBottom: 16 }}>🌐</div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                    {["Responsive on all devices", "Fast load times", "SEO-optimized", "Professional branding"].map((f, i) => (
+                      <div key={i} style={{ display: "flex", gap: 8, alignItems: "center", padding: "8px 12px", borderRadius: 8, background: "#fff" }}>
+                        <span style={{ color: gold, fontWeight: 700 }}>✓</span>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#444" }}>{f}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "5px 14px", borderRadius: 50, background: "rgba(22,28,44,.05)", marginBottom: 20 }}>
+                  <span style={{ fontSize: 12 }}>🏆</span>
+                  <span style={{ fontFamily: "var(--body)", fontSize: 12, fontWeight: 600, color: navy }}>6+ Years Web Design Experience</span>
+                </div>
+                <h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: "clamp(26px,3vw,38px)", color: navy, marginBottom: 16 }}>Website Design</h2>
+                <p style={{ fontFamily: "var(--body)", fontSize: 15, lineHeight: 1.75, color: "#555", marginBottom: 24 }}>Need a professional website that actually converts? We design and build clean, modern websites for home service businesses — so your customers can find you and trust you online.</p>
+                <div style={{ marginBottom: 24 }}>
+                  {["Custom design for your brand", "Mobile-friendly & lightning fast", "SEO-optimized to rank on Google", "Contact forms & booking links", "Ongoing support available"].map((f, i) => (
+                    <div key={i} style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 10 }}>
+                      <span style={{ color: gold, fontWeight: 700, fontSize: 16 }}>✓</span>
+                      <span style={{ fontFamily: "var(--body)", fontSize: 14, color: "#444" }}>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 32, color: navy }}>$500<span style={{ fontSize: 16, fontWeight: 500, color: "#999" }}> starting</span></div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <div style={{ maxWidth: 900, margin: "0 auto", height: 1, background: "linear-gradient(90deg, transparent, " + gold + ", transparent)" }} />
+
+      {/* COMING SOON SERVICES */}
+      <section style={{ padding: "80px 0", background: cream }}>
+        <div style={{ ...wrap, maxWidth: 900 }}>
+          <Reveal>
+            <h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: "clamp(26px,3vw,36px)", color: navy, textAlign: "center", marginBottom: 8 }}>Coming Soon</h2>
+            <p style={{ fontFamily: "var(--body)", color: "#888", fontSize: 15, textAlign: "center", maxWidth: 460, margin: "0 auto 48px" }}>We're building more ways to help your business run smarter.</p>
+          </Reveal>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+            <Reveal delay={0}>
+              <div style={{ padding: "36px 28px", borderRadius: 16, border: "2px solid " + gold, background: "#fff", height: "100%", position: "relative" }}>
+                <div style={{ position: "absolute", top: 16, right: 16, padding: "4px 12px", borderRadius: 20, background: navy, fontFamily: "var(--body)", fontSize: 11, fontWeight: 600, color: gold }}>Coming Soon</div>
+                <div style={{ fontSize: 36, marginBottom: 14 }}>🤖</div>
+                <h3 style={{ fontFamily: "var(--head)", fontWeight: 700, fontSize: 22, color: navy, marginBottom: 12 }}>Full AI Receptionist</h3>
+                <p style={{ fontFamily: "var(--body)", fontSize: 14, color: "#555", lineHeight: 1.7, marginBottom: 20 }}>A complete AI-powered front desk for your business. Answers every call, handles scheduling, rescheduling, cancellations, and customer questions — so you never need a receptionist or answering service again.</p>
+                <div>
+                  {["Answers calls live with AI voice", "Schedules, reschedules & cancels appointments", "Handles FAQs about your business", "Transfers urgent calls to you", "Full call summaries & transcripts"].map((f, i) => (
+                    <div key={i} style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}>
+                      <span style={{ color: gold, fontWeight: 700 }}>✓</span>
+                      <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#555" }}>{f}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div style={{ padding: "36px 28px", borderRadius: 16, border: "2px solid " + gold, background: "#fff", height: "100%", position: "relative" }}>
+                <div style={{ position: "absolute", top: 16, right: 16, padding: "4px 12px", borderRadius: 20, background: navy, fontFamily: "var(--body)", fontSize: 11, fontWeight: 600, color: gold }}>Coming Soon</div>
+                <div style={{ fontSize: 36, marginBottom: 14 }}>📊</div>
+                <h3 style={{ fontFamily: "var(--head)", fontWeight: 700, fontSize: 22, color: navy, marginBottom: 12 }}>Financial Intelligence</h3>
+                <p style={{ fontFamily: "var(--body)", fontSize: 14, color: "#555", lineHeight: 1.7, marginBottom: 12 }}>AI-powered financial insights built for small business owners. Track revenue, expenses, cash flow, and profitability — with smart alerts and plain-English reports so you always know where your money is going.</p>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, padding: "4px 10px", borderRadius: 6, background: "rgba(22,28,44,.05)", marginBottom: 16 }}>
+                  <span style={{ fontSize: 12 }}>🏆</span>
+                  <span style={{ fontFamily: "var(--body)", fontSize: 12, fontWeight: 600, color: navy }}>10+ Years Financial Experience</span>
+                </div>
+                <div>
+                  {["Monthly P&L report — see exactly what you made and spent", "Identify your most profitable services and jobs", "Understand why revenue is up but cash feels tight", "Spot unusual expenses before they become big problems", "Tax-ready financial summary delivered every month", "Custom insights tailored to your specific business"].map((f, i) => (
+                    <div key={i} style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}>
+                      <span style={{ color: gold, fontWeight: 700 }}>✓</span>
+                      <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#555" }}>{f}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section style={{ padding: "60px 0", background: navy }}>
+        <div style={{ ...wrap, textAlign: "center" }}>
+          <Reveal>
+            <h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: "clamp(26px,3vw,36px)", color: "#fff", marginBottom: 12 }}>Ready to Get Started?</h2>
+            <p style={{ fontFamily: "var(--body)", color: "rgba(255,255,255,.55)", fontSize: 16, marginBottom: 28 }}>Let's talk about what your business needs.</p>
+            <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
+              <a href="tel:8174382050" style={{ padding: "14px 28px", background: gold, color: navy, borderRadius: 8, textDecoration: "none", fontSize: 15, fontWeight: 700, fontFamily: "var(--body)" }}>📞 {PHONE}</a>
+              <Link to="/#contact" style={{ padding: "14px 28px", background: "transparent", border: "2px solid rgba(255,255,255,.2)", color: "#fff", borderRadius: 8, textDecoration: "none", fontSize: 15, fontWeight: 600, fontFamily: "var(--body)" }}>Contact Us</Link>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>
@@ -542,7 +635,8 @@ function OptInPage() {
                   </span>
                 </label>
                 <p style={{ fontFamily: "var(--body)", fontSize: 12, color: "#999", lineHeight: 1.5, paddingLeft: 4 }}>
-                  View our <Link to="/privacy" style={{ color: gold, textDecoration: "underline" }}>Privacy Policy</Link> and <Link to="/terms" style={{ color: gold, textDecoration: "underline" }}>Terms & Conditions</Link>.
+                  View our <Link to="/services" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>Services</Link>
+          <Link to="/privacy" style={{ color: gold, textDecoration: "underline" }}>Privacy Policy</Link> and <Link to="/terms" style={{ color: gold, textDecoration: "underline" }}>Terms & Conditions</Link>.
                 </p>
               </div>
 
@@ -693,6 +787,7 @@ export default function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/optin" element={<OptInPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
