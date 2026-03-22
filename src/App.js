@@ -751,7 +751,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div style={{ background: "#FFFFFF", color: navy, minHeight: "100vh", overflowX: "hidden" }}>
+      <div style={{ background: "#FFFFFF", color: navy, minHeight: "100vh", overflowX: "hidden", maxWidth: "100vw" }}>
         <style>{`
           @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap');
           :root { --head: 'Playfair Display', serif; --body: 'DM Sans', sans-serif; }
@@ -761,6 +761,8 @@ export default function App() {
           @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
         
         @media (max-width: 860px) {
+          [style*="grid-template-columns: 1fr 320px"] > div { text-align: center !important; }
+          [style*="grid-template-columns: 1fr 320px"] > div > div > div[style*="display: flex"][style*="gap: 14"] { justify-content: center !important; }
           [style*="grid-template-columns: 1fr 320px"] { grid-template-columns: 1fr !important; }
           [style*="grid-template-columns: repeat(5"] { grid-template-columns: 1fr 1fr !important; }
           [style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
@@ -778,6 +780,9 @@ export default function App() {
         }
         
         @media (max-width: 480px) {
+          [style*="max-width: 1100px"] { padding-left: 16px !important; padding-right: 16px !important; }
+          [style*="gap: 60px"] { gap: 30px !important; }
+          [style*="width: 310px"] { width: 270px !important; }
           [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
           [style*="width: 280px"] { width: 250px !important; }
           [style*="font-size: 50px"] { font-size: 36px !important; }
