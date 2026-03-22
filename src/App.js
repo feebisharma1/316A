@@ -49,13 +49,13 @@ function Bubble({ text, isAI, delay }) {
     return () => obs.disconnect();
   }, [delay]);
   return (
-    <div ref={ref} style={{ display: "flex", justifyContent: isAI ? "flex-start" : "flex-end", marginBottom: 5, opacity: vis ? 1 : 0, transform: vis ? "translateY(0)" : "translateY(14px)", transition: "all .5s cubic-bezier(.22,1,.36,1)" }}>
+    <div ref={ref} style={{ display: "flex", justifyContent: isAI ? "flex-start" : "flex-end", marginBottom: 3, opacity: vis ? 1 : 0, transform: vis ? "translateY(0)" : "translateY(14px)", transition: "all .5s cubic-bezier(.22,1,.36,1)" }}>
       <div style={{ display: "flex", flexDirection: "column", alignItems: isAI ? "flex-start" : "flex-end", maxWidth: "80%" }}>
         <div style={{ fontSize: 9, color: isAI ? gold : "rgba(255,255,255,.4)", fontWeight: 600, fontFamily: "var(--body)", marginBottom: 3 }}>{isAI ? "AI" : "Customer"}</div>
         <div style={{
-          padding: "9px 13px", borderRadius: isAI ? "4px 14px 14px 14px" : "14px 4px 14px 14px",
+          padding: "7px 11px", borderRadius: isAI ? "4px 14px 14px 14px" : "14px 4px 14px 14px",
           background: isAI ? "rgba(255,255,255,.08)" : gold, color: isAI ? "#fff" : navy,
-          fontSize: 12.5, lineHeight: 1.5, fontFamily: "var(--body)", fontWeight: isAI ? 400 : 500
+          fontSize: 11.5, lineHeight: 1.4, fontFamily: "var(--body)", fontWeight: isAI ? 400 : 500
         }}>{text}</div>
       </div>
     </div>
@@ -154,8 +154,8 @@ function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section style={{ paddingTop: 95, paddingBottom: 40, background: "#fff" }}>
-        <div style={{ ...wrap, display: "grid", gridTemplateColumns: "1fr 350px", gap: 60, alignItems: "start" }}>
+      <section style={{ paddingTop: 115, paddingBottom: 40, background: "#fff" }}>
+        <div style={{ ...wrap, display: "grid", gridTemplateColumns: "1fr 320px", gap: 60, alignItems: "start" }}>
           <div style={{ paddingTop: 10 }}>
             <Reveal><p style={{ fontFamily: "var(--body)", fontSize: 13, fontWeight: 600, color: gold, textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 16 }}>AI-Powered Revenue Automation</p></Reveal>
             <Reveal delay={100}><h1 style={{ fontFamily: "var(--head)", fontWeight: 900, fontSize: "clamp(34px,4vw,54px)", lineHeight: 1.12, letterSpacing: "-.02em", color: navy, marginBottom: 20 }}>What Happens When You Miss a Call?</h1></Reveal>
@@ -169,9 +169,9 @@ function HomePage() {
           </div>
           <Reveal delay={200} style={{ display: "flex", justifyContent: "center" }}>
             <div style={{ animation: "float 7s ease-in-out infinite" }}>
-              <div style={{ width: 350, background: navy, borderRadius: 30, padding: 3, boxShadow: "0 0 0 2px " + gold + ", 0 24px 60px rgba(22,28,44,.2)" }}>
-                <div style={{ background: navy, borderRadius: 27, padding: "14px 18px 10px" }}>
-                  <div style={{ textAlign: "center", marginBottom: 14, paddingBottom: 12, borderBottom: "1px solid rgba(255,255,255,.08)" }}>
+              <div style={{ width: 310, background: navy, borderRadius: 30, padding: 3, boxShadow: "0 0 0 2px " + gold + ", 0 24px 60px rgba(22,28,44,.2)" }}>
+                <div style={{ background: navy, borderRadius: 27, padding: "10px 16px 8px" }}>
+                  <div style={{ textAlign: "center", marginBottom: 10, paddingBottom: 8, borderBottom: "1px solid rgba(255,255,255,.08)" }}>
                     <div style={{ fontFamily: "var(--body)", fontWeight: 700, fontSize: 14, color: "#fff" }}>Lone Star HVAC</div>
                     <div style={{ fontSize: 11, color: "rgba(255,255,255,.35)", fontFamily: "var(--body)" }}>Text Message</div>
                   </div>
@@ -183,7 +183,7 @@ function HomePage() {
                   <Bubble isAI delay={2400} text="Perfect! Here's our booking link — we'll confirm your appointment right away!" />
                   <Bubble isAI={false} delay={2900} text="Booked! Thank you so much!" />
                   <Bubble isAI delay={3400} text="Awesome! See you soon. Our tech will call 30 min before arrival. Reply STOP to opt out." />
-                  <div style={{ textAlign: "center", marginTop: 14, padding: "9px 12px", borderRadius: 8, background: "rgba(74,222,128,.12)", border: "1px solid rgba(74,222,128,.25)" }}>
+                  <div style={{ textAlign: "center", marginTop: 10, padding: "7px 10px", borderRadius: 8, background: "rgba(74,222,128,.12)", border: "1px solid rgba(74,222,128,.25)" }}>
                     <span style={{ fontSize: 11.5, fontFamily: "var(--body)", color: "#4ade80", fontWeight: 600 }}>✅ Appointment Booked Automatically</span>
                   </div>
                 </div>
@@ -353,9 +353,9 @@ function HomePage() {
       {/* THE MATH */}
       <section id="results" style={{ padding: "80px 0", background: cream }}>
         <div style={wrap}>
-          <Reveal><h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: "clamp(28px,3vw,40px)", color: navy, marginBottom: 40 }}>The Math Is Simple</h2></Reveal>
+          <Reveal><h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: "clamp(28px,3vw,40px)", color: navy, marginBottom: 40, textAlign: "center" }}>The Math Is Simple</h2></Reveal>
           <Reveal delay={100}>
-            <div style={{ maxWidth: 580 }}>
+            <div style={{ maxWidth: 580, margin: "0 auto" }}>
               {[
                 { label: "Average HVAC job value", value: "$350 – $2,500" },
                 { label: "Missed calls recovered / month", value: "3 – 8 calls" },
