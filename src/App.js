@@ -716,27 +716,62 @@ function TermsPage() {
         </Reveal>
         <Reveal delay={100}>
           <div>
-            <h3 style={h3Style}>Agreement to Terms</h3>
-            <p style={pStyle}>By accessing or using the website and services of {BIZ} ("Company," "we," "us"), you agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, you may not access our website or use our services.</p>
-            <h3 style={h3Style}>Description of Services</h3>
-            <p style={pStyle}>{BIZ} provides AI-powered missed call text-back and appointment booking automation services for businesses. Our services include automated SMS responses to missed calls, AI-driven conversational appointment scheduling, CRM setup and workflow automation, website design and development, and related consulting and support.</p>
-            <h3 style={h3Style}>SMS Communications</h3>
-            <p style={pStyle}>By opting in to receive SMS messages, you agree to the following: you consent to receive automated, transactional, and marketing text messages at the phone number provided; message frequency may vary; message and data rates may apply; you may opt out at any time by replying STOP; you may request help at any time by replying HELP.</p>
-            <p style={pStyle}>SMS consent is not a condition of purchase. Your phone number and SMS consent will not be sold to or shared with third parties for their marketing purposes.</p>
-            <h3 style={h3Style}>Payment Terms</h3>
+            <h3 style={h3Style}>1. Agreement to Terms</h3>
+            <p style={pStyle}>By accessing or using the website and services of {BIZ} ("Company," "we," "us," "our"), you ("you," "user," "subscriber") agree to be bound by these Terms & Conditions ("Terms"). If you do not agree with any part of these Terms, you may not access our website or use our services. You must be at least 18 years of age to use our website and services. By using our services or opting in to our SMS program, you confirm that you are at least 18 years old.</p>
+
+            <h3 style={h3Style}>2. Description of Services</h3>
+            <p style={pStyle}>{BIZ} provides AI-powered automation services for home service businesses and small businesses. Our services include:</p>
+            <p style={pStyle}><strong>AI Missed Call Text-Back:</strong> When a customer calls your business and the call is missed, our AI system automatically sends the caller an SMS text message within 30 seconds. The AI engages the customer in a professional text conversation, answers common questions about your services, and assists with booking an appointment — all without any action required from you.</p>
+            <p style={pStyle}><strong>Website Design & Development:</strong> Professional website design and development services for businesses, including custom design, mobile-responsive layouts, SEO optimization, and ongoing support.</p>
+            <p style={pStyle}><strong>Additional Services:</strong> CRM setup and workflow automation, appointment scheduling systems, and related consulting and support.</p>
+
+            <h3 style={h3Style}>3. SMS Program & Messaging Terms</h3>
+            <p style={pStyle}>By opting in to our SMS messaging program, you agree to the following terms:</p>
+            <p style={pStyle}><strong>Program Description:</strong> {BIZ} operates an SMS messaging program that sends automated text messages to end users (your customers) on behalf of your business. Messages include missed call follow-ups, appointment scheduling confirmations, appointment reminders, service updates, and marketing or promotional messages about our services.</p>
+            <p style={pStyle}><strong>Message Frequency:</strong> Message frequency varies depending on your interactions and the services you have subscribed to. You may receive recurring messages. For businesses using our AI text-back service, your customers will receive automated messages when a call is missed and during the appointment booking process.</p>
+            <p style={pStyle}><strong>Message & Data Rates:</strong> Message and data rates may apply. Please contact your wireless carrier for details about your messaging plan and any applicable charges. {BIZ} is not responsible for any charges incurred from your wireless carrier as a result of receiving SMS messages.</p>
+
+            <h3 style={h3Style}>4. SMS Opt-In & Opt-Out</h3>
+            <p style={pStyle}><strong>Opt-In:</strong> You may opt in to receive SMS messages from {BIZ} through our website opt-in form, by providing your phone number during service enrollment, or by texting a keyword to our business number. By opting in, you expressly consent to receive automated text messages from {BIZ} at the phone number provided.</p>
+            <p style={pStyle}><strong>Opt-Out:</strong> You can opt out of receiving SMS messages at any time by texting <strong>STOP</strong> to any message you receive from us. After opting out, you will receive one final confirmation message and will no longer receive SMS messages from {BIZ} unless you opt in again.</p>
+            <p style={pStyle}><strong>Help:</strong> For assistance with our SMS program, text <strong>HELP</strong> to any message you receive from us, or contact us at {EMAIL} or {PHONE}.</p>
+            <p style={pStyle}><strong>Consent Not Required for Purchase:</strong> SMS consent is not a condition of purchasing any goods or services from {BIZ}. You may choose not to opt in and still use our non-SMS services.</p>
+            <p style={pStyle}><strong>No Sharing of SMS Data:</strong> We will not sell, rent, or share your phone number, SMS consent, or opt-in data with any third parties or affiliates for their marketing or promotional purposes.</p>
+
+            <h3 style={h3Style}>5. Carrier Liability Disclaimer</h3>
+            <p style={pStyle}>Wireless carriers are not liable for delayed or undelivered messages. {BIZ} does not guarantee the delivery, timeliness, or accuracy of any SMS messages. Message delivery is subject to the effective transmission from your wireless carrier and their network conditions. Carriers are not responsible for the content of any messages sent through our SMS program. You acknowledge that wireless carriers may impose restrictions or limitations on messaging that are outside of our control.</p>
+
+            <h3 style={h3Style}>6. Privacy Policy</h3>
+            <p style={pStyle}>Your use of our services is also governed by our <a href="/privacy" style={{ color: gold, textDecoration: "underline" }}>Privacy Policy</a>, which describes how we collect, use, and protect your personal information including your phone number and SMS data. By using our services, you acknowledge that you have read and agree to the terms of our Privacy Policy.</p>
+
+            <h3 style={h3Style}>7. Age Restriction</h3>
+            <p style={pStyle}>Our website, services, and SMS messaging program are intended for individuals who are at least 18 years of age. By using our services or opting in to our SMS program, you represent and warrant that you are at least 18 years old. If we learn that we have collected personal information or SMS consent from a person under age 18, we will promptly delete that information.</p>
+
+            <h3 style={h3Style}>8. Payment Terms</h3>
             <p style={pStyle}>Services are billed monthly at the agreed-upon rate. Payment is due upon receipt of invoice. We reserve the right to suspend services for non-payment after 15 days past due. There are no long-term contracts — you may cancel at any time with 30 days written notice.</p>
-            <h3 style={h3Style}>Client Responsibilities</h3>
-            <p style={pStyle}>You agree to: provide accurate business information for service setup; maintain an active business phone number; comply with all applicable federal, state, and local laws regarding SMS communications and your business operations; not use our services for any unlawful or prohibited purpose.</p>
-            <h3 style={h3Style}>Limitation of Liability</h3>
-            <p style={pStyle}>{BIZ} shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use or inability to use our services. Our total liability shall not exceed the amount paid by you for services in the preceding 30 days.</p>
-            <h3 style={h3Style}>Intellectual Property</h3>
+
+            <h3 style={h3Style}>9. Client Responsibilities</h3>
+            <p style={pStyle}>You agree to: provide accurate business information for service setup; maintain an active business phone number; comply with all applicable federal, state, and local laws regarding SMS communications (including the Telephone Consumer Protection Act and CAN-SPAM Act) and your business operations; ensure that your customers have provided proper consent before their information is used in our automated messaging systems; and not use our services for any unlawful, harassing, or prohibited purpose.</p>
+
+            <h3 style={h3Style}>10. Limitation of Liability</h3>
+            <p style={pStyle}>{BIZ} shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from the use or inability to use our services, including but not limited to lost revenue, missed appointments, or failed message delivery. Our total liability shall not exceed the amount paid by you for services in the preceding 30 days. This limitation applies to all claims, whether based on warranty, contract, tort, or any other legal theory.</p>
+
+            <h3 style={h3Style}>11. Intellectual Property</h3>
             <p style={pStyle}>All content, branding, workflows, and automation systems created by {BIZ} remain our intellectual property unless otherwise agreed in writing. You retain ownership of your business data and customer information.</p>
-            <h3 style={h3Style}>Termination</h3>
-            <p style={pStyle}>Either party may terminate the service agreement with 30 days written notice. Upon termination, we will assist in transitioning your data and deactivating automated workflows.</p>
-            <h3 style={h3Style}>Changes to Terms</h3>
-            <p style={pStyle}>We reserve the right to update these Terms & Conditions at any time. Changes will be posted on this page with an updated date. Continued use of our services constitutes acceptance of updated terms.</p>
-            <h3 style={h3Style}>Contact Us</h3>
+
+            <h3 style={h3Style}>12. Termination</h3>
+            <p style={pStyle}>Either party may terminate the service agreement with 30 days written notice. Upon termination, we will assist in transitioning your data and deactivating automated workflows. Any outstanding balances remain due upon termination.</p>
+
+            <h3 style={h3Style}>13. Dispute Resolution</h3>
+            <p style={pStyle}>Any disputes arising from these Terms or our services shall be governed by and construed in accordance with the laws of the State of Texas. Both parties agree to attempt to resolve any disputes through good-faith negotiation before pursuing other remedies.</p>
+
+            <h3 style={h3Style}>14. Changes to Terms</h3>
+            <p style={pStyle}>We reserve the right to update these Terms & Conditions at any time. Changes will be posted on this page with an updated "Last updated" date. Continued use of our services after changes are posted constitutes acceptance of the updated Terms. We encourage you to review this page periodically.</p>
+
+            <h3 style={h3Style}>15. Contact Us</h3>
+            <p style={pStyle}>If you have any questions about these Terms & Conditions, our SMS program, or need assistance opting out, please contact us:</p>
             <p style={pStyle}>{BIZ}<br />Saginaw, TX<br />Email: {EMAIL}<br />Phone: {PHONE}<br />Website: {SITE}</p>
+            <p style={pStyle}>To opt out of SMS messages, text <strong>STOP</strong> to any message.<br />For help, text <strong>HELP</strong> or email {EMAIL}.</p>
           </div>
         </Reveal>
       </div>
