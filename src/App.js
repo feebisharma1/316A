@@ -109,9 +109,13 @@ function Nav() {
               {["How It Works", "Results", "Pricing", "Contact"].map(t => (
                 <a key={t} href={"#" + t.toLowerCase().replace(/\s/g, "-")} className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>{t}</a>
               ))}
+              <Link to="/payment" className="nav-hide" style={{ color: gold, textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 700 }}>Pay Now</Link>
             </>
           ) : (
-            <Link to="/" className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>Home</Link>
+            <>
+              <Link to="/" className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>Home</Link>
+              <Link to="/payment" className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>Pay</Link>
+            </>
           )}
           <a href="tel:8174382050" style={{ padding: "9px 22px", background: gold, color: navy, borderRadius: 6, textDecoration: "none", fontSize: 14, fontWeight: 700, fontFamily: "var(--body)" }}>Call Us</a>
         </div>
@@ -128,6 +132,7 @@ function Footer() {
         <span style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)" }}>{BIZ} — Saginaw, TX</span>
         <div style={{ display: "flex", gap: 16 }}>
           <Link to="/services" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>Services</Link>
+          <Link to="/payment" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>Payment</Link>
           <Link to="/privacy" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>Privacy Policy</Link>
           <Link to="/terms" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>Terms & Conditions</Link>
           <Link to="/optin" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>SMS Opt-In</Link>
@@ -500,6 +505,49 @@ function ServicesPage() {
 
       <div style={{ maxWidth: 900, margin: "0 auto", height: 1, background: "linear-gradient(90deg, transparent, " + gold + ", transparent)" }} />
 
+      {/* WEBSITE MAINTENANCE */}
+      <section style={{ padding: "80px 0", background: "#fff" }}>
+        <div style={{ ...wrap, maxWidth: 900 }}>
+          <Reveal>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 50, alignItems: "center" }}>
+              <div>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "5px 14px", borderRadius: 50, background: "rgba(199,177,103,.1)", border: "1px solid rgba(199,177,103,.25)", marginBottom: 20 }}>
+                  <span style={{ fontSize: 14 }}>🔧</span>
+                  <span style={{ fontFamily: "var(--body)", fontSize: 12, fontWeight: 600, color: gold }}>Keep Your Site Running Smooth</span>
+                </div>
+                <h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: "clamp(26px,3vw,38px)", color: navy, marginBottom: 16 }}>Website Maintenance</h2>
+                <p style={{ fontFamily: "var(--body)", fontSize: 15, lineHeight: 1.75, color: "#555", marginBottom: 24 }}>Your website needs regular care to stay fast, secure, and up to date. We handle all the technical stuff so you can focus on running your business.</p>
+                <div style={{ marginBottom: 24 }}>
+                  {["Monthly updates and security patches", "Performance monitoring and speed optimization", "Content updates when you need them", "Uptime monitoring — we fix issues before you notice", "Priority support via phone and email", "Monthly report on site health and traffic"].map((f, i) => (
+                    <div key={i} style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 10 }}>
+                      <span style={{ color: gold, fontWeight: 700, fontSize: 16 }}>✓</span>
+                      <span style={{ fontFamily: "var(--body)", fontSize: 14, color: "#444" }}>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 32, color: navy }}>$299<span style={{ fontSize: 16, fontWeight: 500, color: "#999" }}>/mo</span></div>
+              </div>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <div style={{ padding: "32px", borderRadius: 20, background: cream, border: "2px solid " + gold, width: "100%", textAlign: "center" }}>
+                  <div style={{ fontSize: 48, marginBottom: 16 }}>🔧</div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                    {["Updates & patches", "Speed optimization", "Content changes", "Uptime monitoring", "Priority support"].map((f, i) => (
+                      <div key={i} style={{ display: "flex", gap: 8, alignItems: "center", padding: "8px 12px", borderRadius: 8, background: "#fff" }}>
+                        <span style={{ color: gold, fontWeight: 700 }}>✓</span>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#444" }}>{f}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <a href="/payment" style={{ display: "block", marginTop: 20, padding: "14px 24px", background: navy, color: "#fff", borderRadius: 8, textDecoration: "none", fontFamily: "var(--body)", fontWeight: 700, fontSize: 15 }}>Get Started</a>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <div style={{ maxWidth: 900, margin: "0 auto", height: 1, background: "linear-gradient(90deg, transparent, " + gold + ", transparent)" }} />
+
       {/* COMING SOON SERVICES */}
       <section style={{ padding: "80px 0", background: cream }}>
         <div style={{ ...wrap, maxWidth: 900 }}>
@@ -559,6 +607,243 @@ function ServicesPage() {
               <a href="tel:8174382050" style={{ padding: "14px 28px", background: gold, color: navy, borderRadius: 8, textDecoration: "none", fontSize: 15, fontWeight: 700, fontFamily: "var(--body)" }}>📞 {PHONE}</a>
               <Link to="/#contact" style={{ padding: "14px 28px", background: "transparent", border: "2px solid rgba(255,255,255,.2)", color: "#fff", borderRadius: 8, textDecoration: "none", fontSize: 15, fontWeight: 600, fontFamily: "var(--body)" }}>Contact Us</Link>
             </div>
+          </Reveal>
+        </div>
+      </section>
+    </>
+  );
+}
+
+/* ═══════════════════════════════════════ */
+/*  PAYMENT PAGE                           */
+/* ═══════════════════════════════════════ */
+function PaymentPage() {
+  const [selected, setSelected] = useState(null);
+  const [method, setMethod] = useState(null);
+
+  // ⬇️ REPLACE THESE WITH YOUR REAL LINKS ⬇️
+  const STRIPE_TEXTAI_LINK = "https://buy.stripe.com/7sY14n1Bb9dUcYq1VZfbq01";
+  const STRIPE_WEBSITE_LINK = "https://buy.stripe.com/dRmaEXgw5ahY2jM7gjfbq02";
+  const ZELLE_PHONE = "(817) 438-2050";
+  
+  // ⬆️ REPLACE THESE WITH YOUR REAL LINKS ⬆️
+
+  const services = [
+    { id: "textai", name: "AI Missed Call Text-Back", price: "$300/mo", desc: "Automated missed call recovery with AI conversation & booking", stripe: STRIPE_TEXTAI_LINK },
+    { id: "website", name: "Website Design", price: "$500", desc: "Custom professional website for your business", stripe: STRIPE_WEBSITE_LINK },
+    { id: "maintenance", name: "Website Maintenance", price: "$299/mo", desc: "Ongoing updates, support, and maintenance for your website", stripe: "https://buy.stripe.com/7sY00j7Zzdua1fIeILfbq03" },
+  ];
+
+  const inputStyle = {
+    width: "100%", padding: "14px 16px", borderRadius: 8, border: "1px solid #ddd8cc",
+    fontFamily: "var(--body)", fontSize: 15, color: navy, background: "#fff", outline: "none"
+  };
+
+  return (
+    <>
+      {/* Hero */}
+      <section style={{ paddingTop: 115, paddingBottom: 50, background: navy }}>
+        <div style={{ ...wrap, textAlign: "center" }}>
+          <Reveal>
+            <p style={{ fontFamily: "var(--body)", fontSize: 13, fontWeight: 600, color: gold, textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: 16 }}>Secure Payment</p>
+            <h1 style={{ fontFamily: "var(--head)", fontWeight: 900, fontSize: "clamp(32px,4vw,48px)", lineHeight: 1.1, color: "#fff", marginBottom: 16 }}>Make a Payment</h1>
+            <p style={{ fontFamily: "var(--body)", fontSize: 16, color: "rgba(255,255,255,.55)", maxWidth: 480, margin: "0 auto" }}>Select your service and preferred payment method below.</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Step 1 - Select Service */}
+      <section style={{ padding: "60px 0", background: "#fff" }}>
+        <div style={{ ...wrap, maxWidth: 700 }}>
+          <Reveal>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
+              <div style={{ width: 36, height: 36, borderRadius: "50%", background: navy, color: gold, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: 16, fontFamily: "var(--body)" }}>1</div>
+              <h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 24, color: navy }}>Select Your Service</h2>
+            </div>
+          </Reveal>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {services.map((s, i) => (
+              <Reveal key={s.id} delay={i * 80}>
+                <div onClick={() => setSelected(s.id)}
+                  style={{
+                    padding: "24px", borderRadius: 14,
+                    border: selected === s.id ? "2px solid " + gold : "2px solid #e8e4d8",
+                    background: selected === s.id ? cream : "#fff",
+                    cursor: "pointer", transition: "all .2s",
+                    display: "flex", justifyContent: "space-between", alignItems: "center"
+                  }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                    <div style={{
+                      width: 22, height: 22, borderRadius: "50%",
+                      border: selected === s.id ? "6px solid " + gold : "2px solid #ccc",
+                      background: selected === s.id ? gold : "#fff",
+                      transition: "all .2s", flexShrink: 0
+                    }} />
+                    <div>
+                      <div style={{ fontFamily: "var(--body)", fontWeight: 700, fontSize: 16, color: navy }}>{s.name}</div>
+                      <div style={{ fontFamily: "var(--body)", fontSize: 13, color: "#888", marginTop: 2 }}>{s.desc}</div>
+                    </div>
+                  </div>
+                  <div style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 20, color: navy, flexShrink: 0, marginLeft: 16 }}>{s.price}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Step 2 - Payment Method */}
+      {selected && (
+        <section style={{ padding: "0 0 60px", background: "#fff" }}>
+          <div style={{ ...wrap, maxWidth: 700 }}>
+            <Reveal>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: navy, color: gold, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: 16, fontFamily: "var(--body)" }}>2</div>
+                <h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 24, color: navy }}>Choose Payment Method</h2>
+              </div>
+            </Reveal>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
+              {[
+                { id: "card", icon: "💳", label: "Credit / Debit Card", sub: "Powered by Stripe" },
+                { id: "zelle", icon: "🏦", label: "Zelle", sub: "Bank transfer" },
+                { id: "cash", icon: "💵", label: "Cash", sub: "In person" },
+              ].map((m) => (
+                <Reveal key={m.id}>
+                  <div onClick={() => setMethod(m.id)}
+                    style={{
+                      padding: "24px 16px", borderRadius: 14, textAlign: "center",
+                      border: method === m.id ? "2px solid " + gold : "2px solid #e8e4d8",
+                      background: method === m.id ? cream : "#fff",
+                      cursor: "pointer", transition: "all .2s"
+                    }}>
+                    <div style={{ fontSize: 32, marginBottom: 8 }}>{m.icon}</div>
+                    <div style={{ fontFamily: "var(--body)", fontWeight: 700, fontSize: 14, color: navy }}>{m.label}</div>
+                    <div style={{ fontFamily: "var(--body)", fontSize: 12, color: "#999", marginTop: 2 }}>{m.sub}</div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Step 3 - Payment Details */}
+      {selected && method && (
+        <section style={{ padding: "0 0 80px", background: "#fff" }}>
+          <div style={{ ...wrap, maxWidth: 700 }}>
+            <Reveal>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: navy, color: gold, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: 16, fontFamily: "var(--body)" }}>3</div>
+                <h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 24, color: navy }}>Complete Payment</h2>
+              </div>
+            </Reveal>
+
+            <Reveal delay={100}>
+              <div style={{ padding: "36px", borderRadius: 16, border: "2px solid " + gold, background: cream }}>
+                {/* Summary */}
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingBottom: 20, marginBottom: 24, borderBottom: "1px solid #ddd8cc" }}>
+                  <div>
+                    <div style={{ fontFamily: "var(--body)", fontWeight: 700, fontSize: 16, color: navy }}>{services.find(s => s.id === selected)?.name}</div>
+                    <div style={{ fontFamily: "var(--body)", fontSize: 13, color: "#888", marginTop: 2 }}>{method === "card" ? "Credit/Debit Card" : method === "zelle" ? "Zelle" : "Cash (In Person)"}</div>
+                  </div>
+                  <div style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 24, color: navy }}>{services.find(s => s.id === selected)?.price}</div>
+                </div>
+
+                {/* Card - Stripe redirect */}
+                {method === "card" && (
+                  <div style={{ textAlign: "center" }}>
+                    <p style={{ fontFamily: "var(--body)", fontSize: 14, color: "#555", marginBottom: 24, lineHeight: 1.6 }}>You'll be redirected to our secure payment processor (Stripe) to complete your payment. Your card information is never stored on our servers.</p>
+                    <a href={services.find(s => s.id === selected)?.stripe} target="_blank" rel="noopener noreferrer"
+                      style={{
+                        display: "inline-block", padding: "16px 40px", background: navy, color: "#fff",
+                        borderRadius: 8, textDecoration: "none", fontFamily: "var(--body)", fontWeight: 700, fontSize: 16,
+                        boxShadow: "0 4px 16px rgba(22,28,44,.18)"
+                      }}>
+                      Pay with Card →
+                    </a>
+                    <div style={{ display: "flex", justifyContent: "center", gap: 12, marginTop: 20 }}>
+                      <span style={{ fontFamily: "var(--body)", fontSize: 12, color: "#999" }}>🔒 Secured by Stripe</span>
+                      <span style={{ fontFamily: "var(--body)", fontSize: 12, color: "#999" }}>•</span>
+                      <span style={{ fontFamily: "var(--body)", fontSize: 12, color: "#999" }}>256-bit encryption</span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Zelle */}
+                {method === "zelle" && (
+                  <div>
+                    <p style={{ fontFamily: "var(--body)", fontSize: 14, color: "#555", marginBottom: 20, lineHeight: 1.6 }}>Send your payment via Zelle using the details below. Please include your business name in the memo.</p>
+                    <div style={{ padding: "20px", borderRadius: 10, background: "#fff", border: "1px solid #e8e4d8" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#888" }}>Send To (Phone):</span>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 15, fontWeight: 700, color: navy }}>{ZELLE_PHONE}</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#888" }}>Recipient:</span>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 15, fontWeight: 700, color: navy }}>3:16 AI Solutions LLC</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#888" }}>Memo:</span>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 15, fontWeight: 600, color: "#555" }}>Your Business Name + Service</span>
+                      </div>
+                    </div>
+                    <p style={{ fontFamily: "var(--body)", fontSize: 12, color: "#999", marginTop: 16, textAlign: "center" }}>After sending, please email {EMAIL} with confirmation so we can activate your service promptly.</p>
+                  </div>
+                )}
+
+                {/* Cash */}
+                {method === "cash" && (
+                  <div style={{ textAlign: "center" }}>
+                    <div style={{ fontSize: 48, marginBottom: 16 }}>🤝</div>
+                    <p style={{ fontFamily: "var(--body)", fontSize: 15, color: "#555", marginBottom: 24, lineHeight: 1.7 }}>Cash payments are accepted in person. Please contact us to schedule a meeting and complete your setup.</p>
+                    <div style={{ padding: "20px", borderRadius: 10, background: "#fff", border: "1px solid #e8e4d8", marginBottom: 20 }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#888" }}>Call Us:</span>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 15, fontWeight: 700, color: navy }}>{PHONE}</span>
+                      </div>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#888" }}>Email:</span>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 15, fontWeight: 700, color: navy }}>{EMAIL}</span>
+                      </div>
+                    </div>
+                    <a href="tel:8174382050" style={{
+                      display: "inline-block", padding: "16px 40px", background: navy, color: "#fff",
+                      borderRadius: 8, textDecoration: "none", fontFamily: "var(--body)", fontWeight: 700, fontSize: 16,
+                      boxShadow: "0 4px 16px rgba(22,28,44,.18)"
+                    }}>📞 Call to Schedule</a>
+                  </div>
+                )}
+              </div>
+            </Reveal>
+
+            {/* Trust badges */}
+            <Reveal delay={200}>
+              <div style={{ display: "flex", justifyContent: "center", gap: 32, marginTop: 32 }}>
+                {[
+                  { icon: "🔒", text: "Secure Payments" },
+                  { icon: "📄", text: "No Hidden Fees" },
+                  { icon: "❌", text: "Cancel Anytime" },
+                ].map((b, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                    <span style={{ fontSize: 16 }}>{b.icon}</span>
+                    <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#888", fontWeight: 500 }}>{b.text}</span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
+      {/* Questions */}
+      <section style={{ padding: "50px 0", background: cream, borderTop: "2px solid " + gold }}>
+        <div style={{ ...wrap, textAlign: "center" }}>
+          <Reveal>
+            <h3 style={{ fontFamily: "var(--head)", fontWeight: 700, fontSize: 22, color: navy, marginBottom: 8 }}>Questions about billing?</h3>
+            <p style={{ fontFamily: "var(--body)", color: "#777", fontSize: 15, marginBottom: 4 }}>Call us at {PHONE} or email {EMAIL}</p>
+            <p style={{ fontFamily: "var(--body)", color: "#999", fontSize: 13 }}>We accept credit card, debit card, Zelle, and cash (in person).</p>
           </Reveal>
         </div>
       </section>
@@ -636,6 +921,7 @@ function OptInPage() {
                 </label>
                 <p style={{ fontFamily: "var(--body)", fontSize: 12, color: "#999", lineHeight: 1.5, paddingLeft: 4 }}>
                   View our <Link to="/services" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>Services</Link>
+          <Link to="/payment" style={{ fontFamily: "var(--body)", fontSize: 12, color: "rgba(255,255,255,.5)", textDecoration: "none" }}>Payment</Link>
           <Link to="/privacy" style={{ color: gold, textDecoration: "underline" }}>Privacy Policy</Link> and <Link to="/terms" style={{ color: gold, textDecoration: "underline" }}>Terms & Conditions</Link>.
                 </p>
               </div>
@@ -828,6 +1114,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/payment" element={<PaymentPage />} />
           <Route path="/optin" element={<OptInPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
