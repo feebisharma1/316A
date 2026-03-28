@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import { HelmetProvider, Helmet } from "react-helmet-async";
 import OnboardingForm from "./OnboardingForm";
 import ServiceAgreement from "./ServiceAgreement";
 
@@ -166,6 +167,16 @@ function Footer() {
 /* ═══════════════════════════════════════ */
 function HomePage() {
   const [cName, setCName] = useState("");
+  const seo = <Helmet>
+    <title>3:16 AI Solutions | AI-Powered Missed Call Text-Back for Home Service Businesses</title>
+    <meta name="description" content="Stop losing jobs to missed calls. Our AI texts your customer back in 30 seconds, answers their questions, and books the appointment. Serving Fort Worth, Saginaw, and DFW area home service businesses." />
+    <meta name="keywords" content="AI missed call text back, HVAC automation, home service AI, appointment booking AI, Fort Worth TX, Saginaw TX, missed call recovery, GoHighLevel automation" />
+    <meta property="og:title" content="3:16 AI Solutions | Stop Losing Jobs to Missed Calls" />
+    <meta property="og:description" content="AI-powered missed call text-back and appointment booking for home service businesses. Set up in 48 hours." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://316aisolutions.com" />
+    <link rel="canonical" href="https://316aisolutions.com" />
+  </Helmet>;
   const [cEmail, setCEmail] = useState("");
   const [cPhone, setCPhone] = useState("");
   const [cMsg, setCMsg] = useState("");
@@ -178,6 +189,7 @@ function HomePage() {
 
   return (
     <>
+      {seo}
       {/* HERO */}
       <section style={{ paddingTop: 115, paddingBottom: 40, background: "#fff" }}>
         <div style={{ ...wrap, display: "grid", gridTemplateColumns: "1fr 320px", gap: 60, alignItems: "start" }}>
@@ -422,6 +434,7 @@ function HomePage() {
 function ServicesPage() {
   return (
     <>
+      
       {/* HERO */}
       <section style={{ paddingTop: 115, paddingBottom: 60, background: navy, position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(199,177,103,.1) 0%, transparent 60%)", pointerEvents: "none" }} />
@@ -1088,6 +1101,7 @@ function TermsPage() {
 /* ═══════════════════════════════════════ */
 export default function App() {
   return (
+    <HelmetProvider>
     <BrowserRouter>
       <ScrollToTop />
       <div style={{ background: "#FFFFFF", color: navy, minHeight: "100vh", overflowX: "hidden", maxWidth: "100vw" }}>
@@ -1142,5 +1156,6 @@ export default function App() {
         <Footer />
       </div>
     </BrowserRouter>
+    </HelmetProvider>
   );
 }

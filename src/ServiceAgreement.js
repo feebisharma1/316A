@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const navy = "#161C2C";
 const gold = "#C7B167";
@@ -63,6 +64,10 @@ export default function ServiceAgreement() {
   );
 
   return (<>
+    <Helmet>
+      <title>Service Agreement | 3:16 AI Solutions</title>
+      <meta name="description" content="Service agreement for 3:16 AI Solutions AI-powered missed call text recovery service." />
+    </Helmet>
     <section style={{ paddingTop: 115, paddingBottom: 40, background: navy }}>
       <div style={{ ...wrap, textAlign: "center" }}>
         <p style={{ fontFamily: "var(--body)", fontSize: 13, fontWeight: 600, color: gold, textTransform: "uppercase", letterSpacing: "0.15em", marginBottom: 12 }}>Service Agreement</p>
