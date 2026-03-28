@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import OnboardingForm from "./OnboardingForm";
+import ServiceAgreement from "./ServiceAgreement";
 
 const PHONE = "(817) 438-2050";
 const EMAIL = "316AiSolutions@gmail.com";
@@ -83,14 +85,17 @@ function Counter({ end, prefix = "", suffix = "", duration = 1800 }) {
 /* ═══ NAV ═══ */
 function Nav() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  useEffect(() => { setMenuOpen(false); }, [location]);
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", h);
     return () => window.removeEventListener("scroll", h);
   }, []);
   return (
+    <>
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 999,
       padding: scrolled ? "10px 0" : "16px 0",
@@ -102,28 +107,41 @@ function Nav() {
         <Link to="/" style={{ textDecoration: "none", fontFamily: "var(--head)", fontWeight: 800, fontSize: 22, color: "#fff" }}>
           3:16 <span style={{ color: gold }}>AI Solutions</span>
         </Link>
-        <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-          {isHome ? (
-            <>
-              <Link to="/services" className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>Services</Link>
-              {["How It Works", "Results", "Pricing", "Contact"].map(t => (
-                <a key={t} href={"#" + t.toLowerCase().replace(/\s/g, "-")} className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>{t}</a>
-              ))}
-              <Link to="/payment" className="nav-hide" style={{ color: gold, textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 700 }}>Pay Now</Link>
-            </>
-          ) : (
-            <>
-              <Link to="/" className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>Home</Link>
-              <Link to="/payment" className="nav-hide" style={{ color: "rgba(255,255,255,.7)", textDecoration: "none", fontSize: 13, fontFamily: "var(--body)", fontWeight: 500 }}>Pay</Link>
-            </>
-          )}
-          <a href="tel:8174382050" style={{ padding: "9px 22px", background: gold, color: navy, borderRadius: 6, textDecoration: "none", fontSize: 14, fontWeight: 700, fontFamily: "var(--body)" }}>Call Us</a>
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          <span className="nav-hide" style={{ fontFamily: "var(--body)", fontSize: 13, color: "rgba(255,255,255,.45)", fontStyle: "italic" }}>AI-Powered Revenue Automation</span>
+          <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: "none", border: "none", cursor: "pointer", display: "flex", flexDirection: "column", gap: 5, padding: 8 }}>
+            <div style={{ width: 22, height: 2, background: menuOpen ? gold : "#fff", transition: "all .3s", transform: menuOpen ? "rotate(45deg) translateY(7px)" : "none" }} />
+            <div style={{ width: 22, height: 2, background: "#fff", transition: "all .3s", opacity: menuOpen ? 0 : 1 }} />
+            <div style={{ width: 22, height: 2, background: menuOpen ? gold : "#fff", transition: "all .3s", transform: menuOpen ? "rotate(-45deg) translateY(-7px)" : "none" }} />
+          </button>
         </div>
       </div>
     </nav>
+    {/* Hamburger Menu */}
+    <div style={{ position: "fixed", top: 0, right: 0, width: menuOpen ? 280 : 0, height: "100vh", background: navy, zIndex: 998, overflow: "hidden", transition: "width .3s ease", paddingTop: 80, borderLeft: menuOpen ? "2px solid " + gold : "none", boxShadow: menuOpen ? "-10px 0 40px rgba(0,0,0,.3)" : "none" }}>
+      <div style={{ padding: "20px 24px", display: "flex", flexDirection: "column", gap: 4 }}>
+        <div style={{ fontFamily: "var(--body)", fontSize: 11, fontWeight: 600, color: gold, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 8 }}>Menu</div>
+        {[{to:"/",l:"Home"},{to:"/services",l:"Services"},{to:"/payment",l:"Pay Now"}].map(item => (
+          <Link key={item.to} to={item.to} style={{ fontFamily: "var(--body)", fontSize: 15, color: "#fff", textDecoration: "none", padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,.06)" }}>{item.l}</Link>
+        ))}
+        {isHome && ["How It Works", "Results", "Pricing", "Contact"].map(t => (
+          <a key={t} href={"#" + t.toLowerCase().replace(/\s/g, "-")} onClick={() => setMenuOpen(false)} style={{ fontFamily: "var(--body)", fontSize: 15, color: "rgba(255,255,255,.6)", textDecoration: "none", padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,.06)" }}>{t}</a>
+        ))}
+        <div style={{ fontFamily: "var(--body)", fontSize: 11, fontWeight: 600, color: gold, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 20, marginBottom: 8 }}>Client Forms</div>
+        <Link to="/onboarding" style={{ fontFamily: "var(--body)", fontSize: 15, color: "#fff", textDecoration: "none", padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,.06)" }}>Onboarding Form</Link>
+        <Link to="/agreement" style={{ fontFamily: "var(--body)", fontSize: 15, color: "#fff", textDecoration: "none", padding: "10px 0", borderBottom: "1px solid rgba(255,255,255,.06)" }}>Service Agreement</Link>
+        <div style={{ fontFamily: "var(--body)", fontSize: 11, fontWeight: 600, color: gold, textTransform: "uppercase", letterSpacing: "0.1em", marginTop: 20, marginBottom: 8 }}>Legal</div>
+        <Link to="/privacy" style={{ fontFamily: "var(--body)", fontSize: 14, color: "rgba(255,255,255,.5)", textDecoration: "none", padding: "8px 0" }}>Privacy Policy</Link>
+        <Link to="/terms" style={{ fontFamily: "var(--body)", fontSize: 14, color: "rgba(255,255,255,.5)", textDecoration: "none", padding: "8px 0" }}>Terms & Conditions</Link>
+        <Link to="/optin" style={{ fontFamily: "var(--body)", fontSize: 14, color: "rgba(255,255,255,.5)", textDecoration: "none", padding: "8px 0" }}>SMS Opt-In</Link>
+        <a href="tel:8174382050" style={{ display: "block", marginTop: 20, padding: "14px", background: gold, color: navy, borderRadius: 8, textDecoration: "none", fontFamily: "var(--body)", fontWeight: 700, fontSize: 15, textAlign: "center" }}>Call Us</a>
+      </div>
+    </div>
+    {menuOpen && <div onClick={() => setMenuOpen(false)} style={{ position: "fixed", inset: 0, background: "rgba(0,0,0,.4)", zIndex: 997 }} />}
+    </>
   );
-}
 
+}
 /* ═══ FOOTER ═══ */
 function Footer() {
   return (
@@ -525,7 +543,7 @@ function ServicesPage() {
                     </div>
                   ))}
                 </div>
-                <div style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 32, color: navy }}>$299<span style={{ fontSize: 16, fontWeight: 500, color: "#999" }}>/mo</span></div>
+                <div style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 32, color: navy }}>$299</div>
               </div>
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div style={{ padding: "32px", borderRadius: 20, background: cream, border: "2px solid " + gold, width: "100%", textAlign: "center" }}>
@@ -631,7 +649,7 @@ function PaymentPage() {
   const services = [
     { id: "textai", name: "AI Missed Call Text-Back", price: "$300/mo", desc: "Automated missed call recovery with AI conversation & booking", stripe: STRIPE_TEXTAI_LINK },
     { id: "website", name: "Website Design", price: "$500", desc: "Custom professional website for your business", stripe: STRIPE_WEBSITE_LINK },
-    { id: "maintenance", name: "Website Maintenance", price: "$299/mo", desc: "Ongoing updates, support, and maintenance for your website", stripe: "https://buy.stripe.com/7sY00j7Zzdua1fIeILfbq03" },
+    { id: "maintenance", name: "Website Maintenance", price: "$299", desc: "Ongoing updates, support, and maintenance for your website", stripe: "https://buy.stripe.com/7sY00j7Zzdua1fIeILfbq03" },
   ];
 
   const inputStyle = {
@@ -1114,6 +1132,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/onboarding" element={<OnboardingForm />} />
+          <Route path="/agreement" element={<ServiceAgreement />} />
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/optin" element={<OptInPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
