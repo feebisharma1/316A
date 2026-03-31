@@ -4,67 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SMS Opt-In | 3:16 AI Solutions LLC</title>
-  <meta name="description" content="Opt in to receive automated SMS messages from 3:16 AI Solutions LLC. Message frequency varies. Message and data rates may apply. Reply STOP to opt out.">
+  <meta name="description" content="Opt in to receive automated SMS messages from 3:16 AI Solutions LLC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <style>
-    body { font-family: Arial, sans-serif; max-width: 700px; margin: 0 auto; padding: 40px 24px; color: #161C2C; }
-    h1 { font-size: 28px; margin-bottom: 8px; }
-    h2 { font-size: 20px; color: #C7B167; margin-bottom: 20px; }
-    p { font-size: 15px; line-height: 1.7; color: #555; margin-bottom: 16px; }
-    .box { padding: 24px; border: 2px solid #C7B167; border-radius: 12px; background: #F7F4EC; margin: 24px 0; }
-    a { color: #C7B167; }
-    ul { padding-left: 20px; margin-bottom: 16px; }
-    li { margin-bottom: 8px; line-height: 1.6; color: #555; }
-    .footer { margin-top: 40px; padding-top: 20px; border-top: 2px solid #C7B167; font-size: 13px; color: #888; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; color: #161C2C; background: #fff; }
+    .nav { background: #161C2C; padding: 16px 0; border-bottom: 2px solid #C7B167; }
+    .nav-inner { max-width: 800px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 22px; color: #fff; text-decoration: none; }
+    .nav-logo span { color: #C7B167; }
+    .nav-cta { padding: 9px 22px; background: #C7B167; color: #161C2C; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 700; }
+    .hero { padding: 60px 0 40px; background: #161C2C; text-align: center; }
+    .hero p.tag { font-size: 13px; font-weight: 600; color: #C7B167; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 12px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 36px; color: #fff; margin-bottom: 12px; }
+    .hero p.sub { font-size: 15px; color: rgba(255,255,255,.55); max-width: 500px; margin: 0 auto; }
+    .wrap { max-width: 560px; margin: 0 auto; padding: 0 24px; }
+    .form-card { padding: 40px; border-radius: 16px; border: 2px solid #C7B167; background: #F7F4EC; margin-top: -20px; }
+    label.field { display: block; font-size: 13px; font-weight: 600; color: #161C2C; margin-bottom: 6px; }
+    input[type="text"], input[type="tel"] { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1px solid #ddd8cc; font-family: 'DM Sans', sans-serif; font-size: 15px; color: #161C2C; background: #fff; outline: none; margin-bottom: 18px; }
+    .consent-box { display: flex; gap: 12px; align-items: flex-start; padding: 16px; border-radius: 10px; background: #fff; border: 1px solid #e8e4d8; margin-bottom: 14px; cursor: pointer; }
+    .consent-box input { margin-top: 3px; width: 20px; height: 20px; accent-color: #C7B167; cursor: pointer; flex-shrink: 0; }
+    .consent-box span { font-size: 13px; color: #555; line-height: 1.7; }
+    .legal-links { font-size: 12px; color: #999; line-height: 1.5; padding-left: 4px; margin-bottom: 28px; }
+    .legal-links a { color: #C7B167; text-decoration: underline; }
+    .submit-btn { width: 100%; padding: 16px; border-radius: 8px; border: none; background: #161C2C; color: #fff; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 16px; cursor: pointer; }
+    .submit-btn:hover { background: #1e2538; }
+    .disclaimer { font-size: 12px; color: #999; text-align: center; margin-top: 16px; line-height: 1.6; }
+    .info-section { max-width: 560px; margin: 40px auto; padding: 0 24px; }
+    .info-section h3 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; color: #161C2C; margin-bottom: 10px; margin-top: 24px; }
+    .info-section p, .info-section li { font-size: 14px; color: #555; line-height: 1.75; margin-bottom: 8px; }
+    .info-section ul { padding-left: 20px; }
+    .footer { padding: 24px 0; background: #161C2C; border-top: 2px solid #C7B167; margin-top: 40px; text-align: center; }
+    .footer p { font-size: 12px; color: rgba(255,255,255,.5); }
+    .footer a { color: rgba(255,255,255,.5); text-decoration: none; margin: 0 8px; }
   </style>
 </head>
 <body>
-  <h1>3:16 AI Solutions LLC</h1>
-  <h2>SMS Opt-In — Text Message Consent</h2>
-  
-  <div class="box">
-    <p><strong>By opting in, you consent to receive the following types of automated SMS text messages from 3:16 AI Solutions LLC:</strong></p>
-    <ul>
-      <li><strong>Marketing & Promotional Messages:</strong> Information about our services, special offers, and business updates.</li>
-      <li><strong>Transactional Messages:</strong> Missed call responses, appointment booking confirmations, appointment reminders, and service updates.</li>
-    </ul>
+  <div class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">3:16 <span>AI Solutions</span></a>
+      <a href="tel:8174382050" class="nav-cta">Call Us</a>
+    </div>
   </div>
 
-  <h3>Program Details</h3>
-  <ul>
-    <li><strong>Business Name:</strong> 3:16 AI Solutions LLC</li>
-    <li><strong>Phone:</strong> (817) 438-2050</li>
-    <li><strong>Email:</strong> 316AiSolutions@gmail.com</li>
-    <li><strong>Website:</strong> <a href="https://316aisolutions.com">316aisolutions.com</a></li>
-    <li><strong>Message Frequency:</strong> Message frequency varies based on your interactions and services.</li>
-    <li><strong>Message & Data Rates:</strong> Message and data rates may apply. Contact your wireless carrier for details.</li>
-  </ul>
+  <div class="hero">
+    <div class="wrap">
+      <p class="tag">Text Message Consent</p>
+      <h1>SMS Opt-In</h1>
+      <p class="sub">Sign up to receive automated text messages from 3:16 AI Solutions LLC.</p>
+    </div>
+  </div>
 
-  <h3>How to Opt In</h3>
-  <p>You may opt in to receive SMS messages from 3:16 AI Solutions LLC by:</p>
-  <ul>
-    <li>Submitting the opt-in form on this page at <a href="https://316aisolutions.com/optin">316aisolutions.com/optin</a></li>
-    <li>Calling our business phone number at (817) 438-2050</li>
-    <li>Providing your phone number during service enrollment</li>
-  </ul>
+  <div style="padding: 20px 0 40px; background: #fff;">
+    <div class="wrap">
+      <form class="form-card" action="https://formspree.io/f/mqeyogyd" method="POST">
+        <input type="hidden" name="formType" value="SMS OPT-IN">
 
-  <h3>How to Opt Out</h3>
-  <p>You can opt out at any time by replying <strong>STOP</strong> to any message you receive from us. After opting out, you will receive one final confirmation message and will no longer receive SMS messages unless you opt in again.</p>
+        <label class="field">Your Name *</label>
+        <input type="text" name="name" placeholder="John Smith" required>
 
-  <h3>Help</h3>
-  <p>For assistance, reply <strong>HELP</strong> to any message, email <a href="mailto:316AiSolutions@gmail.com">316AiSolutions@gmail.com</a>, or call <a href="tel:8174382050">(817) 438-2050</a>.</p>
+        <label class="field">Phone Number *</label>
+        <input type="tel" name="phone" placeholder="(555) 123-4567" required>
 
-  <h3>Consent</h3>
-  <p>SMS consent is not a condition of purchase. You may choose not to opt in and still use our non-SMS services. Your phone number and SMS consent will <strong>not be sold, rented, or shared with any third parties</strong> for their marketing or promotional purposes.</p>
+        <label class="field">Business Name <span style="color:#aaa;font-weight:400">(optional)</span></label>
+        <input type="text" name="business" placeholder="Your Business LLC">
 
-  <h3>Legal</h3>
-  <p>
-    <a href="https://316aisolutions.com/privacy">Privacy Policy</a> | 
-    <a href="https://316aisolutions.com/terms">Terms & Conditions</a>
-  </p>
+        <label class="consent-box">
+          <input type="checkbox" name="consent_marketing" required>
+          <span>I consent to receive marketing and promotional messages from 3:16 AI Solutions LLC at the phone number provided. Message frequency may vary. Message & data rates may apply. Reply HELP for help or STOP to opt out.</span>
+        </label>
+
+        <label class="consent-box">
+          <input type="checkbox" name="consent_transactional" required>
+          <span>I consent to receive transactional messages from 3:16 AI Solutions LLC at the phone number provided, including missed call responses and appointment booking confirmations. Message frequency may vary. Message & data rates may apply. Reply HELP for help or STOP to opt out.</span>
+        </label>
+
+        <p class="legal-links">View our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms & Conditions</a>.</p>
+
+        <button type="submit" class="submit-btn">Opt In to SMS Updates</button>
+
+        <p class="disclaimer">By submitting this form, you agree to receive automated SMS messages from 3:16 AI Solutions LLC. Consent is not a condition of purchase. You can opt out at any time by replying STOP. Your phone number and SMS consent will not be sold, rented, or shared with any third parties for marketing purposes.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="info-section">
+    <h3>Program Details</h3>
+    <ul>
+      <li><strong>Business:</strong> 3:16 AI Solutions LLC</li>
+      <li><strong>Phone:</strong> (817) 438-2050</li>
+      <li><strong>Email:</strong> 316AiSolutions@gmail.com</li>
+      <li><strong>Message Frequency:</strong> Varies based on interactions and services</li>
+      <li><strong>Message & Data Rates:</strong> May apply. Contact your carrier for details.</li>
+    </ul>
+
+    <h3>How to Opt In</h3>
+    <p>You may opt in by: (1) Submitting this form, (2) Calling our business number at (817) 438-2050, or (3) Providing your phone number during service enrollment.</p>
+
+    <h3>How to Opt Out</h3>
+    <p>Reply <strong>STOP</strong> to any message at any time. You will receive one confirmation message and no further texts unless you opt in again.</p>
+
+    <h3>Help</h3>
+    <p>Reply <strong>HELP</strong> to any message, email <a href="mailto:316AiSolutions@gmail.com">316AiSolutions@gmail.com</a>, or call <a href="tel:8174382050">(817) 438-2050</a>.</p>
+
+    <h3>Third Party Sharing</h3>
+    <p><strong>We do not sell, rent, or share your phone number or SMS opt-in data with any third parties for their marketing or promotional purposes.</strong></p>
+
+    <h3>Consent</h3>
+    <p>SMS consent is not a condition of purchase. You may use our non-SMS services without opting in.</p>
+  </div>
 
   <div class="footer">
-    <p>3:16 AI Solutions LLC — Saginaw, TX — (817) 438-2050 — 316AiSolutions@gmail.com — 316aisolutions.com</p>
-    <p>Consent to receive SMS messages is not a condition of any purchase. Opt-in information is never shared with third parties.</p>
+    <p>3:16 AI Solutions LLC &mdash; Saginaw, TX &mdash; (817) 438-2050</p>
+    <p style="margin-top:8px">
+      <a href="/">Home</a>
+      <a href="/services">Services</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms & Conditions</a>
+    </p>
   </div>
 </body>
 </html>
