@@ -129,6 +129,18 @@
         <input type="hidden" name="formType" value="SMS OPT-IN FORM">
         <input type="hidden" name="_subject" value="New SMS Opt-In Submission">
 
+        <!-- REQUIRED DISCLOSURES -->
+        <div style="padding:16px;border-radius:10px;background:#fff;border:1px solid #e8e4d8;margin-bottom:24px;font-size:13px;color:#555;line-height:1.8">
+          <p style="font-weight:700;color:#161C2C;margin-bottom:8px;font-size:14px">SMS Program Disclosures:</p>
+          <p><strong>Business Name:</strong> 3:16 AI Solutions LLC</p>
+          <p><strong>Message Types:</strong> Marketing/promotional messages and transactional messages (missed call responses, appointment confirmations, reminders, service updates).</p>
+          <p><strong>Message Frequency:</strong> Message frequency varies based on your interactions.</p>
+          <p><strong>Message & Data Rates:</strong> Message and data rates may apply. Contact your wireless carrier for pricing details.</p>
+          <p><strong>Opt-Out:</strong> You can opt out at any time by replying STOP to any message. You may also reply CANCEL, END, QUIT, or UNSUBSCRIBE.</p>
+          <p><strong>Help:</strong> Reply HELP to any message, email 316AiSolutions@gmail.com, or call (817) 438-2050.</p>
+          <p><strong>Consent is NOT required for purchase.</strong> Opting in is completely voluntary.</p>
+        </div>
+
         <label class="field-label">Your Name *</label>
         <input type="text" name="name" placeholder="John Smith" required>
 
@@ -143,22 +155,23 @@
 
         <!-- CONSENT CHECKBOX 1: MARKETING -->
         <label class="consent-box">
-          <input type="checkbox" name="consent_marketing" value="yes" required>
+          <input type="checkbox" name="consent_marketing" value="yes">
           <span class="text">
-            <strong>Marketing & Promotional Messages:</strong> I consent to receive marketing and promotional messages from 3:16 AI Solutions LLC at the phone number provided, including information about services, special offers, and business updates. Message frequency may vary. Message & data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt out at any time.
+            <strong>Marketing & Promotional Messages:</strong> I consent to receive automated marketing and promotional SMS/MMS messages from <strong>3:16 AI Solutions LLC</strong> at the phone number provided. Message types include: service promotions, special offers, and business updates. <strong>Message frequency varies. Message and data rates may apply.</strong> Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for help. Consent is not required for purchase.
           </span>
         </label>
 
         <!-- CONSENT CHECKBOX 2: TRANSACTIONAL -->
         <label class="consent-box">
-          <input type="checkbox" name="consent_transactional" value="yes" required>
+          <input type="checkbox" name="consent_transactional" value="yes">
           <span class="text">
-            <strong>Transactional Messages:</strong> I consent to receive transactional messages from 3:16 AI Solutions LLC at the phone number provided, including missed call responses, appointment booking confirmations, appointment reminders, and service updates. Message frequency may vary. Message & data rates may apply. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt out at any time.
+            <strong>Transactional Messages:</strong> I consent to receive automated transactional SMS/MMS messages from <strong>3:16 AI Solutions LLC</strong> at the phone number provided. Message types include: missed call responses, appointment booking confirmations, appointment reminders, and service updates. <strong>Message frequency varies. Message and data rates may apply.</strong> Reply <strong>STOP</strong> to opt out at any time. Reply <strong>HELP</strong> for help. Consent is not required for purchase.
           </span>
         </label>
 
         <p class="legal-links">
-          By checking the boxes above, you provide your express written consent to receive automated SMS/MMS messages from 3:16 AI Solutions LLC. 
+          By checking the boxes above, you provide your express written consent to receive automated SMS/MMS messages from 3:16 AI Solutions LLC.
+          Checking the boxes is optional and not a condition of any purchase.
           View our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms & Conditions</a>.
         </p>
 
