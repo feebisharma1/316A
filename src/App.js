@@ -1099,6 +1099,11 @@ function TermsPage() {
 /* ═══════════════════════════════════════ */
 /*  APP WITH ROUTER                        */
 /* ═══════════════════════════════════════ */
+function OptInRedirect() {
+  useEffect(() => { window.location.replace("/optin.html"); }, []);
+  return null;
+}
+
 export default function App() {
   return (
     <HelmetProvider>
@@ -1149,7 +1154,7 @@ export default function App() {
           <Route path="/onboarding" element={<OnboardingForm />} />
           <Route path="/agreement" element={<ServiceAgreement />} />
           <Route path="/payment" element={<PaymentPage />} />
-          <Route path="/optin" element={<OptInPage />} />
+          <Route path="/optin" element={<OptInRedirect />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
         </Routes>
