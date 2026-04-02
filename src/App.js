@@ -579,6 +579,95 @@ function ServicesPage() {
 
       <div style={{ maxWidth: 900, margin: "0 auto", height: 1, background: "linear-gradient(90deg, transparent, " + gold + ", transparent)" }} />
 
+      {/* WEBSITE CHATBOT */}
+      <section style={{ padding: "80px 0", background: "#fff" }}>
+        <div style={{ ...wrap, maxWidth: 900 }}>
+          <Reveal>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 50, alignItems: "center" }}>
+              <div>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "5px 14px", borderRadius: 50, background: "rgba(199,177,103,.1)", border: "1px solid rgba(199,177,103,.25)", marginBottom: 20 }}>
+                  <span style={{ fontSize: 14 }}>🤖</span>
+                  <span style={{ fontFamily: "var(--body)", fontSize: 12, fontWeight: 600, color: gold }}>Capture Every Website Visitor</span>
+                </div>
+                <h2 style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: "clamp(26px,3vw,38px)", color: navy, marginBottom: 16 }}>AI Website Chatbot</h2>
+                <p style={{ fontFamily: "var(--body)", fontSize: 15, lineHeight: 1.75, color: "#555", marginBottom: 24 }}>Turn website visitors into booked appointments. Our AI chatbot lives on your website 24/7 — greeting visitors, answering questions about your services, and booking jobs on the spot. It is like having a receptionist on your website that never sleeps.</p>
+                <div style={{ marginBottom: 24 }}>
+                  {["AI-powered conversations — not a scripted bot", "Answers questions about your services and pricing", "Books appointments directly on your calendar", "Captures leads even at 2am", "Custom trained on your specific business", "Works alongside AI Text-Back for full coverage", "Setup fee: $99 one-time"].map((f, i) => (
+                    <div key={i} style={{ display: "flex", gap: 10, alignItems: "center", marginBottom: 10 }}>
+                      <span style={{ color: gold, fontWeight: 700, fontSize: 16 }}>✓</span>
+                      <span style={{ fontFamily: "var(--body)", fontSize: 14, color: "#444" }}>{f}</span>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}>
+                  <div style={{ fontFamily: "var(--head)", fontWeight: 800, fontSize: 32, color: navy }}>$149<span style={{ fontSize: 16, fontWeight: 500, color: "#999" }}>/mo</span></div>
+                  <div style={{ fontFamily: "var(--body)", fontSize: 13, color: gold, fontWeight: 600 }}>FREE with AI Text-Back bundle</div>
+                </div>
+              </div>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <div style={{ width: "100%", borderRadius: 20, overflow: "hidden", border: "2px solid " + gold, boxShadow: "0 12px 40px rgba(22,28,44,.1)" }}>
+                  {/* Chat mockup */}
+                  <div style={{ background: navy, padding: "12px 16px", display: "flex", alignItems: "center", gap: 10 }}>
+                    <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#4ade80", boxShadow: "0 0 6px #4ade80" }} />
+                    <span style={{ fontFamily: "var(--body)", fontSize: 13, fontWeight: 600, color: "#fff" }}>Chat with us</span>
+                    <span style={{ fontFamily: "var(--body)", fontSize: 11, color: "rgba(255,255,255,.4)", marginLeft: "auto" }}>Online</span>
+                  </div>
+                  <div style={{ background: cream, padding: "20px 16px", minHeight: 280 }}>
+                    {/* Bot message */}
+                    <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
+                      <div style={{ width: 28, height: 28, borderRadius: "50%", background: navy, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                        <span style={{ fontSize: 12 }}>🤖</span>
+                      </div>
+                      <div style={{ padding: "10px 14px", borderRadius: "4px 14px 14px 14px", background: "#fff", border: "1px solid #e8e4d8", maxWidth: "80%" }}>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#444", lineHeight: 1.5 }}>Hi! Welcome to Lone Star HVAC. How can I help you today?</span>
+                      </div>
+                    </div>
+                    {/* User message */}
+                    <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 14 }}>
+                      <div style={{ padding: "10px 14px", borderRadius: "14px 4px 14px 14px", background: gold, maxWidth: "80%" }}>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: navy, fontWeight: 500 }}>My AC is making a weird noise. Do you do repairs?</span>
+                      </div>
+                    </div>
+                    {/* Bot reply */}
+                    <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
+                      <div style={{ width: 28, height: 28, borderRadius: "50%", background: navy, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                        <span style={{ fontSize: 12 }}>🤖</span>
+                      </div>
+                      <div style={{ padding: "10px 14px", borderRadius: "4px 14px 14px 14px", background: "#fff", border: "1px solid #e8e4d8", maxWidth: "80%" }}>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#444", lineHeight: 1.5 }}>Absolutely! We handle all AC repairs. Strange noises usually mean something needs attention soon. Would you like to book a free diagnostic? I can get you in as early as tomorrow!</span>
+                      </div>
+                    </div>
+                    {/* User reply */}
+                    <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 14 }}>
+                      <div style={{ padding: "10px 14px", borderRadius: "14px 4px 14px 14px", background: gold, maxWidth: "80%" }}>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: navy, fontWeight: 500 }}>Yes please! Tomorrow works great.</span>
+                      </div>
+                    </div>
+                    {/* Booking confirmation */}
+                    <div style={{ display: "flex", gap: 8 }}>
+                      <div style={{ width: 28, height: 28, borderRadius: "50%", background: navy, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                        <span style={{ fontSize: 12 }}>🤖</span>
+                      </div>
+                      <div style={{ padding: "10px 14px", borderRadius: "4px 14px 14px 14px", background: "#fff", border: "1px solid #e8e4d8", maxWidth: "80%" }}>
+                        <span style={{ fontFamily: "var(--body)", fontSize: 13, color: "#444", lineHeight: 1.5 }}>You are all set! Here is your booking link 📅</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{ background: "#fff", padding: "10px 16px", borderTop: "1px solid #e8e4d8", display: "flex", alignItems: "center", gap: 8 }}>
+                    <div style={{ flex: 1, padding: "8px 12px", borderRadius: 8, background: "#f5f5f5", fontFamily: "var(--body)", fontSize: 12, color: "#aaa" }}>Type a message...</div>
+                    <div style={{ width: 32, height: 32, borderRadius: "50%", background: navy, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <span style={{ color: gold, fontSize: 14 }}>→</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <div style={{ maxWidth: 900, margin: "0 auto", height: 1, background: "linear-gradient(90deg, transparent, " + gold + ", transparent)" }} />
+
       {/* COMING SOON SERVICES */}
       <section style={{ padding: "80px 0", background: cream }}>
         <div style={{ ...wrap, maxWidth: 900 }}>
