@@ -119,7 +119,7 @@ function Nav() {
       </div>
     </nav>
     {/* Hamburger Menu */}
-    <div style={{ position: "fixed", top: 0, right: 0, width: menuOpen ? 280 : 0, height: "100vh", background: navy, zIndex: 998, overflow: "hidden", transition: "width .3s ease", paddingTop: 80, borderLeft: menuOpen ? "2px solid " + gold : "none", boxShadow: menuOpen ? "-10px 0 40px rgba(0,0,0,.3)" : "none" }}>
+    <div style={{ position: "fixed", top: 0, right: 0, width: menuOpen ? 280 : 0, height: "100vh", background: navy, zIndex: 998, overflow: "hidden", overflowY: "auto", transition: "width .3s ease", paddingTop: 80, borderLeft: menuOpen ? "2px solid " + gold : "none", boxShadow: menuOpen ? "-10px 0 40px rgba(0,0,0,.3)" : "none" }}>
       <div style={{ padding: "20px 24px", display: "flex", flexDirection: "column", gap: 4 }}>
         <div style={{ fontFamily: "var(--body)", fontSize: 11, fontWeight: 600, color: gold, textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 8 }}>Menu</div>
         {[{to:"/",l:"Home"},{to:"/services",l:"Services"},{to:"/payment",l:"Pay Now"}].map(item => (
